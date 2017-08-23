@@ -12,17 +12,19 @@
       <div class="jumbotron">
         <h1>Pig Dice</h1>
       </div>
-        <h2>Here's how to play Pig Dice:</h2>
-        <br>
-        <p>The goal is to reach <strong>one hundred.</strong></p>
-        <p>Begin by rolling the Pig die.</p>
-        <p>You may roll as many times as you want, but if you roll a 1, your score for that round is nullified and it is your opponent's turn.</p>
-        <p>At any point of your round you may choose to "add to total" and your turn ends but your score is saved to your total! The winner of the game goes 2nd in the next game.</p>
+      <h2>Here's how to play Pig Dice:</h2>
+      <br>
+      <p>The goal is to reach <strong>one hundred.</strong></p>
+      <p>Begin by rolling the Pig die.</p>
+      <p>You may roll as many times as you want, but if you roll a 1, your score for that round is nullified and it is your opponent's turn.</p>
+      <p>At any point of your round you may choose to "add to total" and your turn ends but your score is saved to your total! The winner of the game goes 2nd in the next game.</p>
+      <div id="menu-show">
         <button class="btn btn-info" id="pvp">Player vs. Player</button>
-          <button class="btn btn-info" id="pvc">Player vs. Computer</button>
+        <button class="btn btn-info" id="pvc">Player vs. Computer</button>
+      </div>
       <div id="whole-section">
-        <div id="player1Box">
-          <div class="row">
+        <div class="row">
+          <div id="player1Box">
             <div class="col-md-6">
               <h2>Player 1 Current Score: </h2>
               <div>
@@ -34,7 +36,7 @@
               </div>
             </div>
           </div>
-        </div>
+
           <div id="player2Box">
             <div class="col-md-6">
               <h2>Player 2 Current Score: </h2>
@@ -70,10 +72,9 @@
               <div>
                 <p class="resultBox"><span id="cpuRound"></span></p>
               </div>
+              <img src="img/robot.png" id="robo">
             </div>
           </div>
-          <br>
-
         <div class="row">
           <div id="pvp-section">
             <div class="col-md-6">
@@ -91,6 +92,7 @@
               </div>
             </div>
           </div>
+        </div>
           <div id="vsCpuBtns">
             <div class="col-md-6">
               <div id="cpu-show">
@@ -104,7 +106,6 @@
             </div>
           </div>
         </div>
-      </div>
       </div>
       <div id="playAgain">
         <button class="btn btn-info" id="playAgain-btn">Play Again!</button>

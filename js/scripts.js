@@ -56,6 +56,7 @@ $(document).ready(function() {
       alert("Player 1 Wins!!!!");
       $("#whole-section").hide();
       $("#playAgain").show();
+      $("#menu-show").hide();
     };
   });
 //player 2 buttons
@@ -77,6 +78,7 @@ $(document).ready(function() {
       alert("Player 2 Wins!!!!");
       $("#whole-section").hide();
       $("#playAgain").show();
+      $("#menu-show").hide();
     };
   });
 //play again feature
@@ -88,6 +90,7 @@ $(document).ready(function() {
     $("#playerScore2").text(player2.finalTotal());
     $("#playerScore1").text(player1.finalTotal());
     $("#whole-section").show();
+    $("#menu-show").show();
     $("#playAgain").hide();
   });
 //show/hide menu buttons
@@ -101,9 +104,11 @@ $(document).ready(function() {
     $("#player2Box").show();
     $("#cpu-show").hide();
     $("#pvp-section").show();
+    $("#robo").hide();
   });
   $("button#pvc").click(function(event) {
     $("#whole-section").show();
+    $("#robo").show();
     $("#pvc").hide();
     $("#pvp").show();
     $("#player1Box").hide();
@@ -131,6 +136,7 @@ var playerVsCpu = new player(total,round);
       alert("Player 1 Wins!!!!");
       $("#whole-section").hide();
       $("#playAgain").show();
+      $("#menu-show").hide();
     };
     $("#passDice-show").show();
     $("#cpu-show").hide();
@@ -154,6 +160,7 @@ $("button#passDice").click(function(event) {
       alert("Computer Wins!!!!");
       $("#whole-section").hide();
       $("#playAgain").show();
+      $("#menu-show").hide();
     };
   }
 
@@ -172,6 +179,7 @@ $("button#passDice").click(function(event) {
       alert("Computer Wins!!!!");
       $("#whole-section").hide();
       $("#playAgain").show();
+      $("#menu-show").hide();
     };
   }else{
     var roll;
@@ -188,6 +196,7 @@ $("button#passDice").click(function(event) {
       alert("Computer Wins!!!!");
       $("#whole-section").hide();
       $("#playAgain").show();
+      $("#menu-show").hide();
     };
   };
   $("#passDice-show").hide();
