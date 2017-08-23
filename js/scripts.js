@@ -16,6 +16,10 @@ player.prototype.rollDice = function() {
   return this.round;
 };
 
+player.prototype.resetRound = function(){
+  this.round = 0;
+};
+
 player.prototype.addToTotal = function() {
   this.total += this.round;
 };
@@ -25,11 +29,13 @@ player.prototype.addToTotal = function() {
 $(document).ready(function() {
   var total = 0;
   var round = 0;
+  var player1;
+  var player2;
   $("#pigdice").submit(function(event) {
   event.preventDefault();
   //submit function
-  var player1 = new player(total,round);
-  var player2 = new player(total,round);
+  player1 = new player(total,round);
+  player2 = new player(total,round);
 
   //game
   alert(player1.rollDice());

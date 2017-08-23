@@ -8,11 +8,47 @@
    <title>This little piggie</title>
   </head>
   <body>
-    <div class="containter">
+    <div class="container">
       <div class="jumbotron">
-      <h1>Pig Dice</h1>
+        <h1>Pig Dice</h1>
       </div>
+        <h2>Here's how to play Pig Dice:</h2>
+        <br>
+        <p>The goal is to reach <strong>one hundred</strong></p>
+        <p>Begin by rolling the Pig die</p>
+        <p>You may roll as many times as you want, but if you roll a 1, your score for that round is nullified and it is your opponent's turn.</p>
+        <p>At any point of your round you may choose to "add to total" and your turn ends but your score is saved to your total!</p>
+      <div class="row">
+        <div class="col-md-6">
+          <div id="playerScore1">
+            <h2>Player 1 Current Score: </h2>
+          </div>
+          <div id="playerRound1">
+            <h2>Player 1 Current Round: </h2>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div id="playerScore2">
+            <h2>Player 2 Current Score: </h2>
+          </div>
+          <div id="playerRound2">
+            <h2>Player 2 Current Round: </h2>
+          </div>
+        </div>
 
+        <div class="col-md-6">
+          <div id="player1-show">
+          <button id="rollPlayer1" type="button">Roll dice</button>
+          <button id="addPlayer1" type="button">Add to total</button>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div id="player2-show">
+          <button id="rollPlayer2" type="button">Roll dice</button>
+          <button id="addPlayer2" type="button">Add to total</button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
