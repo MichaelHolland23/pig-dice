@@ -6,6 +6,9 @@
   display: none;
 }
 
+#playAgain{
+  display: none;
+}
 
 .container{
   background-color: teal;
@@ -18,4 +21,13 @@
 
 p{
   font-size: 20px;
+}
+
+.resultBox{
+  border-style: groove;
+  border-width: 2px;
+  border-color: black;
+  background-color: white;
+  width: 40px;
+  padding-left: 5px;
 }

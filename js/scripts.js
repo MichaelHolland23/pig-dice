@@ -53,7 +53,9 @@ $(document).ready(function() {
     $("#player1-show").hide();
     $("#playerRound1").text(player1.resetRound());
     if(player1.finalTotal()>=100){
-      alert("Player 1 Wins!!!!")
+      alert("Player 1 Wins!!!!");
+      $("#whole-section").hide();
+      $("#playAgain").show();
     };
   });
   $("button#rollPlayer2").click(function(event) {
@@ -71,7 +73,19 @@ $(document).ready(function() {
     $("#player2-show").hide();
     $("#playerRound2").text(player2.resetRound());
     if(player2.finalTotal()>=100){
-      alert("Player 2 Wins!!!!")
+      alert("Player 2 Wins!!!!");
+      $("#whole-section").hide();
+      $("#playAgain").show();
     };
+  });
+  $("button#playAgain-btn").click(function(event) {
+    player1 = new player(total,round);
+    player2 = new player(total,round);
+    $("#playerRound2").text(player2.resetRound());
+    $("#playerRound1").text(player1.resetRound());
+    $("#playerScore2").text(player2.finalTotal());
+    $("#playerScore1").text(player1.finalTotal());
+    $("#whole-section").show();
+    $("#playAgain").hide();
   });
 });
