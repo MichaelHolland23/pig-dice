@@ -88,4 +88,19 @@ $(document).ready(function() {
     $("#whole-section").show();
     $("#playAgain").hide();
   });
+
+  $("button#pvp").click(function(event) {
+    $("#whole-section").show();
+    $("#pvp").hide();
+    $("#pvc").show();
+    $("#cpuBox").hide();
+    $("#player2Box").show();
+  });
+  $("button#pvc").click(function(event) {
+    $("#whole-section").show();
+    $("#pvc").hide();
+    $("#pvp").show();
+    $("#player2Box").hide();
+    $("#cpuBox").show();
+  });
 });
