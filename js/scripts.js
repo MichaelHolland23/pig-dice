@@ -17,11 +17,15 @@ player.prototype.rollDice = function() {
 };
 
 player.prototype.resetRound = function(){
-  this.round = 0;
+  return this.round = 0;
 };
 
 player.prototype.addToTotal = function() {
-  this.total += this.round;
+  return this.total += this.round;
+};
+
+player.prototype.finalTotal = function() {
+  return this.total;
 };
 
 
@@ -31,22 +35,43 @@ $(document).ready(function() {
   var round = 0;
   var player1;
   var player2;
-  $("#pigdice").submit(function(event) {
-  event.preventDefault();
-  //submit function
   player1 = new player(total,round);
   player2 = new player(total,round);
 
-  //game
-  alert(player1.rollDice());
-  }
-}
-
-//submit function
-var player1 = new player(total,round);
-var player2 = new player(total,round);
-
-//game
-alert(player1.rollDice());
-
-player1.addToTotal();
+  $("button#rollPlayer1").click(function() {
+    var roll = player1.rollDice();
+    $("#playerRound1").text(roll);
+    if(roll===0){
+      $("#player2-show").show();
+      $("#player1-show").hide();
+      $("#playerRound1").text(player1.resetRound());
+    };
+  });
+  $("button#addPlayer1").click(function(event) {
+    $("#playerScore1").text(player1.addToTotal());
+    $("#player2-show").show();
+    $("#player1-show").hide();
+    $("#playerRound1").text(player1.resetRound());
+    if(player1.finalTotal()>=100){
+      alert("Player 1 Wins!!!!")
+    };
+  });
+  $("button#rollPlayer2").click(function(event) {
+    var roll = player2.rollDice();
+    $("#playerRound2").text(roll);
+    if(roll===0){
+      $("#player1-show").show();
+      $("#player2-show").hide();
+      $("#playerRound2").text(player2.resetRound());
+    };
+  });
+  $("button#addPlayer2").click(function(event) {
+    $("#playerScore2").text(player2.addToTotal());
+    $("#player1-show").show();
+    $("#player2-show").hide();
+    $("#playerRound2").text(player2.resetRound());
+    if(player2.finalTotal()>=100){
+      alert("Player 2 Wins!!!!")
+    };
+  });
+});

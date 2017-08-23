@@ -10,3 +10,7 @@
 .container{
   background-color: teal;
 }
+
+.row{
+  padding: 10px;
+}
