@@ -10,6 +10,10 @@
   display: none;
 }
 
+#passDice-show{
+  display: none;
+}
+
 .container{
   background-color: teal;
 }

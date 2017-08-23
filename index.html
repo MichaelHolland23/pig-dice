@@ -21,18 +21,20 @@
         <button class="btn btn-info" id="pvp">Player vs. Player</button>
           <button class="btn btn-info" id="pvc">Player vs. Computer</button>
       <div id="whole-section">
-        <div class="row">
-          <div class="col-md-6">
-            <h2>Player 1 Current Score: </h2>
-            <div>
-              <p class="resultBox"><span id="playerScore1"></span></p>
-            </div>
-              <h2>Player 1 Current Round: </h2>
-            <div>
-              <p class="resultBox"><span id="playerRound1"></span></p>
+        <div id="player1Box">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>Player 1 Current Score: </h2>
+              <div>
+                <p class="resultBox"><span id="playerScore1"></span></p>
+              </div>
+                <h2>Player 1 Current Round: </h2>
+              <div>
+                <p class="resultBox"><span id="playerRound1"></span></p>
+              </div>
             </div>
           </div>
-
+        </div>
           <div id="player2Box">
             <div class="col-md-6">
               <h2>Player 2 Current Score: </h2>
@@ -45,45 +47,64 @@
               </div>
             </div>
           </div>
+
+          <div id="humanBox">
+            <div class="col-md-6">
+              <h2>Your Current Score: </h2>
+              <div>
+                <p class="resultBox"><span id="humanScore"></span></p>
+              </div>
+              <h2>Your Current Round: </h2>
+              <div>
+                <p class="resultBox"><span id="humanRound"></span></p>
+              </div>
+            </div>
+          </div>
           <div id="cpuBox">
             <div class="col-md-6">
               <h2>Computer Current Score: </h2>
               <div>
-                <p class="resultBox"><span id="cpuScore2"></span></p>
+                <p class="resultBox"><span id="cpuScore"></span></p>
               </div>
               <h2>Computer Current Round: </h2>
               <div>
-                <p class="resultBox"><span id="cpuRound2"></span></p>
+                <p class="resultBox"><span id="cpuRound"></span></p>
               </div>
             </div>
           </div>
           <br>
-        </div>
+
         <div class="row">
-          <div class="col-md-6">
-            <div id="player1-show">
-              <h3>Player 1's turn: </h3>
-            <button  class="btn btn-success" id="rollPlayer1">Roll dice</button>
-            <button class="btn btn-danger" id="addPlayer1">Add to total</button>
+          <div id="pvp-section">
+            <div class="col-md-6">
+              <div id="player1-show">
+                <h3>Player 1's turn: </h3>
+              <button  class="btn btn-success" id="rollPlayer1">Roll dice</button>
+              <button class="btn btn-danger" id="addPlayer1">Add to total</button>
+              </div>
             </div>
-          </div>
-          <div class="col-md-6">
-            <div id="player2-show">
-              <h3>Player 2's turn: </h3>
-            <button class="btn-success" id="rollPlayer2">Roll dice</button>
-            <button class="btn btn-danger" id="addPlayer2">Add to total</button>
+            <div class="col-md-6">
+              <div id="player2-show">
+                <h3>Player 2's turn: </h3>
+              <button class="btn-success" id="rollPlayer2">Roll dice</button>
+              <button class="btn btn-danger" id="addPlayer2">Add to total</button>
+              </div>
             </div>
           </div>
           <div id="vsCpuBtns">
             <div class="col-md-6">
               <div id="cpu-show">
                 <h3>Your turn: </h3>
-              <button class="btn-success" id="rollPlayer2">Roll dice</button>
-              <button class="btn btn-danger" id="addPlayer2">Add to total</button>
+                <button class="btn-success" id="rollVsCpu">Roll dice</button>
+                <button class="btn btn-danger" id="addVsCpu">Add to total</button>
+              </div>
+              <div id="passDice-show">
+                <button class="btn btn-warning" id="passDice">Pass the dice!</button>
               </div>
             </div>
           </div>
         </div>
+      </div>
       </div>
       <div id="playAgain">
         <button class="btn btn-info" id="playAgain-btn">Play Again!</button>
