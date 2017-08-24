@@ -81,18 +81,7 @@ $(document).ready(function() {
       $("#menu-show").hide();
     };
   });
-//play again feature
-  $("button#playAgain-btn").click(function(event) {
-    player1 = new player(total,round);
-    player2 = new player(total,round);
-    $("#playerRound2").text(player2.resetRound());
-    $("#playerRound1").text(player1.resetRound());
-    $("#playerScore2").text(player2.finalTotal());
-    $("#playerScore1").text(player1.finalTotal());
-    $("#whole-section").show();
-    $("#menu-show").show();
-    $("#playAgain").hide();
-  });
+
 //show/hide menu buttons
   $("button#pvp").click(function(event) {
     $("#whole-section").show();
@@ -132,8 +121,8 @@ var playerVsCpu = new player(total,round);
   $("button#addVsCpu").click(function(event) {
     $("#humanScore").text(playerVsCpu.addToTotal());
     $("#humanRound").text(playerVsCpu.resetRound());
-    if(player1.finalTotal()>=100){
-      alert("Player 1 Wins!!!!");
+    if(playerVsCpu.finalTotal()>=100){
+      alert("You Win!!!!");
       $("#whole-section").hide();
       $("#playAgain").show();
       $("#menu-show").hide();
@@ -156,25 +145,25 @@ $("button#passDice").click(function(event) {
       };
     }
     $("#cpuScore").text(cpu.addToTotal());
+    $("#cpuRound").text(cpu.resetRound());
     if(cpu.finalTotal()>=100){
       alert("Computer Wins!!!!");
       $("#whole-section").hide();
       $("#playAgain").show();
       $("#menu-show").hide();
     };
-  }
-
-  if((playerVsCpu.finalTotal() - cpu.finalTotal()) >= 15 ){
+  }else if((playerVsCpu.finalTotal() - cpu.finalTotal()) >= 15 ){
     var roll;
-    for(var i = 0; i <6; ++i) {
+    for(var i = 0; i <4; ++i) {
       roll = cpu.rollDice();
       $("#cpuRound").text(roll);
       if(roll===0){
         $("#cpuRound").text(cpu.resetRound());
-        i = 6;
+        i = 4;
       };
     }
     $("#cpuScore").text(cpu.addToTotal());
+    $("#cpuRound").text(cpu.resetRound());
     if(cpu.finalTotal()>=100){
       alert("Computer Wins!!!!");
       $("#whole-section").hide();
@@ -192,6 +181,7 @@ $("button#passDice").click(function(event) {
       };
     }
     $("#cpuScore").text(cpu.addToTotal());
+    $("#cpuRound").text(cpu.resetRound());
     if(cpu.finalTotal()>=100){
       alert("Computer Wins!!!!");
       $("#whole-section").hide();
@@ -202,4 +192,22 @@ $("button#passDice").click(function(event) {
   $("#passDice-show").hide();
   $("#cpu-show").show();
 });
+//play again feature
+  $("button#playAgain-btn").click(function(event) {
+    player1 = new player(total,round);
+    player2 = new player(total,round);
+    playerVsCpu = new player(total,round);
+    cpu = new player(total,round);
+    $("#playerRound2").text(player2.resetRound());
+    $("#playerRound1").text(player1.resetRound());
+    $("#playerScore2").text(player2.finalTotal());
+    $("#playerScore1").text(player1.finalTotal());
+    $("#cpuRound").text(cpu.resetRound());
+    $("#cpuScore").text(cpu.finalTotal());
+    $("#humanRound").text(playerVsCpu.resetRound());
+    $("#humanScore").text(playerVsCpu.finalTotal());
+    $("#whole-section").show();
+    $("#menu-show").show();
+    $("#playAgain").hide();
+  });
 });
